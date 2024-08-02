@@ -3,19 +3,12 @@ namespace EjercicioInterfaces
 {
     public class Formulas : IOperaciones 
     {
-        public double s;
-        public double L;
-        public double W;
-        public double H;
-        public double AB;
-        public double h;
-        public double r;
-
-        double IOperaciones.Cubo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        double IOperaciones.PrismaRectangularRecto { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        double IOperaciones.PrismaCilindro { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        double IOperaciones.PiramideCono { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        double IOperaciones.Esfera { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double s { get; set; }
+        public double L { get; set; }
+        public double W { get; set; }
+        public double H { get; set; }
+        public double AreaBase { get; set; }
+        public double r { get; set; }
 
         public double Cubo()
         {
@@ -29,17 +22,17 @@ namespace EjercicioInterfaces
 
         public double PrismaCilindro()
         {
-            return AB * h;
+            return (AreaBase * H);
         }
 
         public double PiramideCono()
         {
-            return (AB * h) / 3;
+            return (AreaBase * H) / 3;
         }
 
         public double Esfera()
         {
-            return (4 * 3.1415926535897931 * (r * r * r) / 3);
+            return (Math.PI * (r * r * r) / 3);
         }
 
         public void Imprimir()
